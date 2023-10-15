@@ -8,8 +8,7 @@
     <Shell.TitleView>
         <HorizontalStackLayout 
             Margin="0, 5, 0, 0"
-            HorizontalOptions="Start"
-            BackgroundColor="#EA4372">
+            HorizontalOptions="Start">
             <Label FontSize="30" 
                    FontAttributes="Bold"
                    Text="PenguinPantry"></Label>
@@ -31,30 +30,15 @@
                             </Frame.GestureRecognizers>
                             <Grid
                               RowDefinitions="25, auto, auto, auto"
-                              ColumnDefinitions=".4*, *, .5*">
-                                <Image x:Name="pfp" 
-                                        Grid.Row="0" 
-                                        Grid.Column="0" 
-                                        Source="{Binding Source}" 
-                                        Grid.RowSpan="3"
-                                        Grid.ColumnSpan="1"
-                                        HeightRequest="80"
-                                        Aspect="AspectFill">
-
-                                </Image>
+                              ColumnDefinitions="*">
+                                
                                 <Label Text="{Binding Name}"
                                         Padding="20, 0, 0, 0"
                                         Grid.Column="1"
                                         FontAttributes="Bold">
 
                                 </Label>
-                                <Label Text="{Binding Tags}"
-                                        Padding="20, 0, 0, 0"
-                                        Grid.Row="1"
-                                        Grid.Column="1"
-                                        Grid.ColumnSpan="2">
-
-                                </Label>
+                               
                                 <Label Text="{Binding Instructions}"
                                         Padding="30, 0, 0, 0"
                                         TextColor="DimGray"
@@ -72,14 +56,13 @@
                                         Grid.Column="1">
 
                                 </Label>
-                                <Button Text="{Binding Cooktime, StringFormat='Cooktime: {0}'}"
-                                        FontSize="12"
-                                        Grid.Row="3"
-                                        Grid.Column="2"
-                                        BackgroundColor="#EA4372"
-                                        HeightRequest="40">
-                                    
-                                </Button>
+                                <Label Text="{Binding Cooktime, StringFormat='Cooktime: {0}'}"
+                                        Padding="20, 0, 0, 0"
+                                        Grid.Row="4"
+                                        TextColor="Gray"
+                                        Grid.Column="1">
+
+                                </Label>
                             </Grid>
                         </Frame>
                     </Grid>

@@ -25,7 +25,7 @@ namespace PenguinPantry.ViewModels
         async Task GetRecipes()
         {
             List<Recipe> recipesCanCook = new List<Recipe>();
-            if (!RequestsClient.Ingredients.Count < 10)
+            if (!(RequestsClient.Ingredients.Count < 10))
             {
 
                 while (recipesCanCook.Count() < 10)
