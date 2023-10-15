@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="PenguinPantry.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:PenguinPantry"
+    xmlns:views="clr-namespace:PenguinPantry.Views"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar>
+        <Tab Title="Add Ingredients" Icon="plus.png">
+            <ShellContent ContentTemplate="{DataTemplate views:IngredientInputPage}"></ShellContent>
+        </Tab>
+        <Tab Title="Ingredients List" Icon="strawberry.png">
+            <ShellContent ContentTemplate="{DataTemplate views:IngredientsPage}"></ShellContent>
+        </Tab>
+        <Tab Title="Recipes" Icon="list.png">
+            <ShellContent ContentTemplate="{DataTemplate views:RecipePage}"></ShellContent>
+        </Tab>
+    </TabBar>
+    
+</Shell>

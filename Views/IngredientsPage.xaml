@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PenguinPantry.Views.IngredientsPage"
+             xmlns:viewmodel="clr-namespace:PenguinPantry.ViewModels"
+             xmlns:models="clr-namespace:PenguinPantry.Models"
+             x:DataType="viewmodel:IngredientViewModel">
+
+    <Shell.TitleView>
+        <HorizontalStackLayout 
+        Margin="0, 5, 0, 0"
+        HorizontalOptions="Start"
+        BackgroundColor="#EA4372">
+            <Label FontSize="30" 
+               FontAttributes="Bold"
+               Text="PenguinPantry"></Label>
+        </HorizontalStackLayout>
+    </Shell.TitleView>
+
+    <Grid RowDefinitions="*">
+
+        <CollectionView ItemsSource="{Binding Ingredients}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Delete" BackgroundColor="Red"></SwipeItem>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <Grid Padding="0,5">
+                            <Frame Padding="10">
+                                <Label Text="{Binding .}" FontSize="20"></Label>
+                            </Frame>
+                        </Grid>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+    </Grid>
+
+</ContentPage>
