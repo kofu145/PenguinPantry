@@ -8,8 +8,7 @@
     <Shell.TitleView>
         <HorizontalStackLayout 
     Margin="0, 5, 0, 0"
-    HorizontalOptions="Start"
-    BackgroundColor="#EA4372">
+    HorizontalOptions="Start">
             <Label FontSize="30" 
            FontAttributes="Bold"
            Text="PenguinPantry"></Label>

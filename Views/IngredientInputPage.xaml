@@ -5,8 +5,7 @@
     <Shell.TitleView>
         <HorizontalStackLayout 
         Margin="0, 5, 0, 0"
-        HorizontalOptions="Start"
-        BackgroundColor="#EA4372">
+        HorizontalOptions="Start">
             <Label FontSize="30" 
            FontAttributes="Bold"
            Text="PenguinPantry"></Label>
@@ -16,16 +15,19 @@
     <VerticalStackLayout>
 
         <Label Text="Add Ingredients" Margin="15" FontSize="30" HorizontalOptions="Center"></Label>
+
+        <Frame Margin="15">
+            <Grid ColumnDefinitions="*, 100" Margin="15">
+                <Entry x:Name="entryIngredients" Grid.Column="0">
+
+                </Entry>
+
+                <Button FontSize="15" Text="Enter" Grid.Column="1" x:Name="buttonIngredient">
+
+                </Button>
+            </Grid>
+        </Frame>
         
-        <Grid ColumnDefinitions="*, 100" Margin="15">
-            <Entry x:Name="entryIngredients" Grid.Column="0">
-
-            </Entry>
-
-            <Button Text="Enter" Grid.Column="1" x:Name="buttonIngredient">
-
-            </Button>
-        </Grid>
 
         <Label></Label>
         
@@ -33,8 +35,11 @@
                FontSize="30">
             Or scan your receipt!
         </Label>
-        <Button Margin="15" FontSize="40" Text="Scan">
-            
-        </Button>
+        <Frame Margin="15">
+            <Button Margin="15" FontSize="15" Text="Scan">
+
+            </Button>
+        </Frame>
+        
     </VerticalStackLayout>
 </ContentPage>
