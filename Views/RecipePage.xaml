@@ -15,8 +15,11 @@
         </HorizontalStackLayout>
     </Shell.TitleView>
 
-    <Grid RowDefinitions="*">
-        <CollectionView ItemsSource="{Binding Recipes}">
+    <Grid RowDefinitions="40, *">
+        <Button Grid.Row="0" Text="Update" Command="{Binding GetRecipesCommand}">
+            
+        </Button>
+        <CollectionView ItemsSource="{Binding Recipes}" Grid.Row="1">
 
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Recipe">

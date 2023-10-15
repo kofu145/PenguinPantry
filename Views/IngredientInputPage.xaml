@@ -37,7 +37,7 @@
         </Label>
         <Frame Margin="15">
             <Button Margin="15" FontSize="15" Text="Scan">
-
+            
             </Button>
         </Frame>
         

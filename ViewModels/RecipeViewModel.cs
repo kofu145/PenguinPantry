@@ -18,7 +18,6 @@ namespace PenguinPantry.ViewModels
         public RecipeViewModel()
         {
             Recipes = new ObservableCollection<Recipe>(RequestsClient.Recipes.GetRange(0, 10));
-            GetRecipes();
         }
 
         [RelayCommand]
@@ -28,8 +27,9 @@ namespace PenguinPantry.ViewModels
             if (!(RequestsClient.Ingredients.Count < 10))
             {
 
-                while (recipesCanCook.Count() < 10)
+                while (recipesCanCook.Count() < 5)
                 {
+                    int counter = 0;
                     for (int i = 0; i < RequestsClient.Recipes.Count; i++)
                     {
                         bool canCook = true;
@@ -37,7 +37,11 @@ namespace PenguinPantry.ViewModels
                         {
                             if (!RequestsClient.Recipes[i].Ingredients.Contains(ingredient))
                             {
-                                canCook = false;
+                                counter++;
+                                if (counter > 1)
+                                {
+                                    canCook = false;
+                                }
                                 break;
                             }
                         }
@@ -54,6 +58,7 @@ namespace PenguinPantry.ViewModels
         [RelayCommand]
         async Task ViewRecipeCommand()
         {
+            await GetRecipes();
             //Shell.Current.GoToAsync(nameof());
         }
 
