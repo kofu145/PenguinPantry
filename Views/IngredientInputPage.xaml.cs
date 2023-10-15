@@ -8,5 +8,11 @@ public partial class IngredientInputPage : ContentPage
 	{
 		InitializeComponent();
 		BindingContext = vm;
+        buttonIngredient.Clicked += ButtonIngredient_Clicked;
 	}
+
+    private void ButtonIngredient_Clicked(object sender, EventArgs e)
+    {
+        DisplayAlert(entryIngredients.Text + "Ingredient added!", "That's a lie. Nothing got added yet.", "Okay cool!");
+    }
 }

@@ -7,11 +7,12 @@
              x:DataType="viewmodel:RecipeViewModel">
     <Shell.TitleView>
         <HorizontalStackLayout 
-            Margin="0, 5, 0, 0"
-            HorizontalOptions="Start">
+    Margin="0, 5, 0, 0"
+    HorizontalOptions="Start"
+    BackgroundColor="#EA4372">
             <Label FontSize="30" 
-                   FontAttributes="Bold"
-                   Text="PenguinPantry"></Label>
+           FontAttributes="Bold"
+           Text="PenguinPantry"></Label>
         </HorizontalStackLayout>
     </Shell.TitleView>
 
@@ -20,7 +21,7 @@
 
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Recipe">
-                    <Grid Padding="10, 5">
+                    <Grid Padding="10, 5" Margin="15, 15, 15, 0">
                         <Frame>
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer
@@ -30,12 +31,13 @@
                             </Frame.GestureRecognizers>
                             <Grid
                               RowDefinitions="25, auto, auto, auto"
-                              ColumnDefinitions="*">
+                              ColumnDefinitions="*, *">
                                 
                                 <Label Text="{Binding Name}"
                                         Padding="20, 0, 0, 0"
-                                        Grid.Column="1"
-                                        FontAttributes="Bold">
+                                        Grid.Column="0"
+                                        FontAttributes="Bold"
+                                       Grid.ColumnSpan="2">
 
                                 </Label>
                                
@@ -44,7 +46,7 @@
                                         TextColor="DimGray"
                                         FontSize="12"
                                         Grid.Row="2"
-                                        Grid.Column="1"
+                                        Grid.Column="0"
                                         VerticalOptions="FillAndExpand"
                                         Grid.ColumnSpan="2">
                                     
@@ -53,7 +55,7 @@
                                         Padding="20, 0, 0, 0"
                                         Grid.Row="3"
                                         TextColor="Gray"
-                                        Grid.Column="1">
+                                        Grid.Column="0">
 
                                 </Label>
                                 <Label Text="{Binding Cooktime, StringFormat='Cooktime: {0}'}"
