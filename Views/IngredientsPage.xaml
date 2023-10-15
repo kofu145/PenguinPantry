@@ -16,9 +16,19 @@
         </HorizontalStackLayout>
     </Shell.TitleView>
 
-    <Grid RowDefinitions="*">
+    <Grid RowDefinitions="70,*">
 
-        <CollectionView ItemsSource="{Binding Ingredients}">
+        <Label Grid.Row="0" Text="Ingredients List" Margin="15" FontSize="30" HorizontalOptions="Center"></Label>
+
+        <CollectionView Grid.Row="1" ItemsSource="{Binding Ingredients}">
+            <!--If Ingredients doesn't work, use this:-->
+            <!--<CollectionView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Apples</x:String>
+                    <x:String>Bananas</x:String>
+                    <x:String>Oranges</x:String>
+                </x:Array>
+            </CollectionView.ItemsSource>-->
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <SwipeView>
@@ -28,7 +38,7 @@
                             </SwipeItems>
                         </SwipeView.RightItems>
                         <Grid Padding="0,5">
-                            <Frame Padding="10">
+                            <Frame Padding="10" Margin="15,15,15,0">
                                 <Label Text="{Binding .}" FontSize="20"></Label>
                             </Frame>
                         </Grid>

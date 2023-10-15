@@ -13,6 +13,7 @@ public partial class IngredientInputPage : ContentPage
 
     private void ButtonIngredient_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert(entryIngredients.Text + "Ingredient added!", "That's a lie. Nothing got added yet.", "Okay cool!");
+        DisplayAlert(entryIngredients.Text + "Ingredient added!", "", "Okay cool!");
+        
     }
 }
